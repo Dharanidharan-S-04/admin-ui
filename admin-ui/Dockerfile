@@ -3,6 +3,7 @@ FROM nginx
 
 # ARG layers for build time environment variables (to be used in your build script)
 ARG SOURCE
+ARG COMMIT_HASH
 ARG COMMIT_ID
 ARG BUILD_TIME
 
@@ -24,6 +25,7 @@ ENV artifactory_url_env=${artifactory_url}
 
 # Docker Labels
 LABEL source=${SOURCE} \
+      commit_hash=${COMMIT_HASH} \
       commit_id=${COMMIT_ID} \
       build_time=${BUILD_TIME}
 
